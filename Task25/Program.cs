@@ -26,7 +26,7 @@ class Myclass
         //return Math.Pow(a, b);
         
         double sum = 1;
-        for(int i=1; i < b; i++)
+        for(int i=1; i <= b; i++)
             sum *= a;
         return sum;
     }
