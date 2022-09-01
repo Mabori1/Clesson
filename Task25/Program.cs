@@ -23,6 +23,11 @@ class Myclass
 
     static double myPow(int a, int b)
     {
-        return Math.Pow(a, b);
+        //return Math.Pow(a, b);
+        
+        double sum = 1;
+        for(int i=1; i <= b; i++)
+            sum *= a;
+        return sum;
     }
 }
