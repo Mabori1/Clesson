@@ -12,7 +12,7 @@ class Myclass
         int a = 10;
         int[] array = createArray(a);
                 
-        Console.WriteLine($"В массиве из {a} рандомных элементов: \n " +
+        Console.WriteLine($"В массиве из {a} рандомных элементов:\n" +
                           $"{string.Join(", ", array)}, \n" +
                           $"четных чисел: {checkChet(array)}");
 
