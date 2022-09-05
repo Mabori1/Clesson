@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-int[] vvodABC()
+int[] inputNums()
 {
     System.Console.WriteLine("Введите 3 числа через пробел:");
 
@@ -19,7 +19,7 @@ int[] vvodABC()
 bool test(int a, int b, int c)
 {
     if ((a <= b + c) && (b <= a + c) && (c <= a + b))
-    return true;
+        return true;
 
     return false;
 }
@@ -28,10 +28,13 @@ bool test(int a, int b, int c)
 void print(bool b)
 {
     if (b)
-    {System.Console.WriteLine("Можно создать треугольник!");}
+    {
+        System.Console.WriteLine("Можно создать треугольник!"); 
+        return;
+    }
 
-    System.Console.WriteLine("Нельзя создать треугольник.");
+    System.Console.WriteLine("Нельзя создать треугольник.");    
 }
 
-
-print(test(vvodABC()));
+int[] temp = inputNums();
+print(test(temp[0], temp[1], temp[2]));
