@@ -1,34 +1,33 @@
-﻿
+﻿// Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте,
+//  сколько чисел больше 0 ввёл пользователь.
+//0, 7, 8, -2, -2 -> 2
+//1, -7, 567, 89, 223-> 3
 
-using System;
+int[] inputNums()
+{
+    System.Console.WriteLine("Введите положительные и отрицательные\n" + 
+                             "числа через пробел: ");
 
-int vvodNum(){
-    
-Console.WriteLine("Введите число: ");
+    string temp = Console.ReadLine();
+    string[] s = temp.Split(' ');
+    int[] nums = new int[s.Length];
 
-int num = Convert.ToInt32(Console.ReadLine());
-
- return num;
+    for (var i = 0; i < s.Length; i++)
+    {
+        nums[i] = Convert.ToInt32(s[i]);
+    }
+    return nums;
 }
 
-
-void translate(int num)
+void printCountPositiveNums(int[] nums)
 {
-    string s = "";
-    int i=0;
-
-    int temp = num;
-
-    while(num >= 1)
+    int count = 0;
+    for (var i = 0; i < nums.Length; i++)
     {
-        temp = num % 2;
-        s +=  temp;
-        num /= 2;
-       
+        if(nums[i] > 0) count++;
     }
 
-    System.Console.WriteLine(s);
-
+    System.Console.WriteLine($"Введено положительных чисел: {count}.");
 }
 
-translate( vvodNum());
+printCountPositiveNums(inputNums());
