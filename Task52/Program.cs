@@ -7,55 +7,62 @@
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
 
-int[,] CreateAndFullArray(int a, int b)
+
+int[,] CreateAndFillArray(int a, int b)
 {
-   int[,] array = new int[a,b];
- 
-   for (int m = 0; m < array.GetLength(0); m++)
-   {
-       //System.Console.WriteLine();
- 
-       for (var n = 0; n < array.GetLength(1); n++)
-       {
-           array[m,n] = new Random().Next(2,3);
-       }
-   } 
-   return  array;
+    int[,] array = new int[a, b];
+
+    for (int cols = 0; cols < array.GetLength(0); cols++)
+    {
+        //System.Console.WriteLine();
+
+        for (var rows = 0; rows < array.GetLength(1); rows++)
+        {
+            array[cols, rows] = new Random().Next(1, 10);
+        }
+    }
+    return array;
 }
- 
-void PowChetIndex(int[,] array)
+
+double[] SumNumColumnArray(int[,] array)
 {
-   for (int m = 0; m < array.GetLength(0); m++)
-   {
-       //System.Console.WriteLine();
- 
-       for (var n = 0; n < array.GetLength(1); n++)
-       {
-           bool notNullIndex = (n != 0) && (m != 0);
-           if(notNullIndex && (m % 2 == 0) && (n % 2 == 0)) 
-           {
-               array[m,n] = (int)Math.Pow(array[m,n], 2);          
-           }
-       }
-   }
+    double[] sumCols = new double[array.GetLength(0)];
+
+    for (int cols = 0; cols < array.GetLength(0); cols++)
+    {
+        for (var rows = 0; rows < array.GetLength(1); rows++)
+        {            
+                sumCols[rows] += array[cols, rows];    
+        }
+    }
+    return sumCols;
 }
- 
+
 void PrintArray(int[,] array)
 {
-   for (int m = 0; m < array.GetLength(0); m++)
-   {
- 
-       for (var n = 0; n < array.GetLength(1); n++)
-       {
-           System.Console.Write(array[m,n]);
-           System.Console.Write(" ");
-       }
-       System.Console.WriteLine();
-   }
+    for (int cols = 0; cols < array.GetLength(0); cols++)
+    {
+
+        for (var rows = 0; rows < array.GetLength(1); rows++)
+        {
+            System.Console.Write(array[cols, rows]);
+            System.Console.Write("\t");
+        }
+        System.Console.WriteLine();
+    }
 }
- 
-int[,] array = CreateAndFullArray(8,8);
+
+
+void PrintSumNumColumnArray(double[] arr)
+{
+    for (int i = 0; i < arr.Length; i++)
+    {
+        Console.Write(arr[i]/arr.Length + "\t");
+    }    
+}
+
+int[,] array = CreateAndFillArray(8, 8);
 PrintArray(array);
 System.Console.WriteLine();
-PowChetIndex(array);
-PrintArray(array);
+double[] arr =  SumNumColumnArray(array);
+PrintSumNumColumnArray(arr);
