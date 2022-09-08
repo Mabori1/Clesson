@@ -22,11 +22,11 @@ void createArray(int a, int b)
         {
             if((n != 0) && (m != 0) && (m % 2 == 0) && (n % 2 == 0) )   
             {
-                array[m,n] = (int)Math.Pow(new Random().Next(2,10), 2);            
+                array[m,n] = (int)Math.Pow(new Random().Next(2,3), 2);            
             }
 
             else {
-             array[m,n] = new Random().Next(2,10);     
+             array[m,n] = new Random().Next(2,3);     
             }
             System.Console.Write(array[m,n]);
             System.Console.Write(" ");
