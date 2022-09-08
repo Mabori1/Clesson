@@ -28,7 +28,7 @@ void createArray(int a, int b)
             System.Console.Write(" ");
         }        
 
-    }   
+    }    
 
     System.Console.WriteLine(sum);
 }
