@@ -9,38 +9,44 @@
 // 17 -> такого числа в массиве нет
 
 
-int[,] createArray(int a, int b) 
+int[,] createAndPrintArray(int a, int b)
 {
-    int[,] array = new int[a,b];
+    int[,] array = new int[a, b];
 
-    for (int m = 0; m < array.GetLength(0); m++)
+    for (int cols = 0; cols < array.GetLength(0); cols++)
     {
         System.Console.WriteLine();
 
-        for (var n = 0; n < array.GetLength(1); n++)
+        for (var rows = 0; rows < array.GetLength(1); rows++)
         {
-            array[m,n] = new Random().Next(0,10);
-            System.Console.Write(array[m,n] + " ");
+            array[cols, rows] = new Random().Next(0, 10);
+            System.Console.Write(array[cols, rows] + " ");
         }
-        
-    }   
+
+    }
     return array;
 }
 
-createArray(3,4);
 
-void findInArray( int[,] arr, int findNum)
+
+void findInArray(int[,] arr, int findNum)
 {
-    for (int m = 0; m < arr.GetLength(0); m++)
+    bool notFind = true;
+
+    for (int cols = 0; cols < arr.GetLength(0); cols++)
     {
-        for (var n = 0; n < arr.GetLength(1); n++)
+        for (var rows = 0; rows < arr.GetLength(1); rows++)
         {
-            if(findNum == arr[m,n])
-            System.Console.WriteLine($"Найдено число: {arr[m,n]} ");
-            else
-            System.Console.WriteLine("Такого числа нет.");
+            if (findNum == arr[cols, rows])
+            {
+                System.Console.WriteLine($"\nНайдено число: {findNum} -> arr[{cols}, {rows}]");
+                notFind = false;
+            }
+
         }
     }
+    if (notFind)
+        System.Console.WriteLine("\nТакого числа в массиве нет.");
 }
 
-findInArray( createArray(4,4), 12);
+findInArray(createAndPrintArray(4, 4), 5);
