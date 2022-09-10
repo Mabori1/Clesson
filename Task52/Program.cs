@@ -31,8 +31,8 @@ double[] SumNumColumnArray(int[,] array)
     for (int cols = 0; cols < array.GetLength(0); cols++)
     {
         for (var rows = 0; rows < array.GetLength(1); rows++)
-        {            
-                sumCols[rows] += array[cols, rows];    
+        {
+            sumCols[rows] += array[cols, rows];
         }
     }
     return sumCols;
@@ -57,12 +57,12 @@ void PrintSumNumColumnArray(double[] arr)
 {
     for (int i = 0; i < arr.Length; i++)
     {
-        Console.Write(arr[i]/arr.Length + "\t");
-    }    
+        Console.Write(arr[i] / arr.Length + "\t");
+    }
 }
 
 int[,] array = CreateAndFillArray(8, 8);
 PrintArray(array);
 System.Console.WriteLine();
-double[] arr =  SumNumColumnArray(array);
+double[] arr = SumNumColumnArray(array);
 PrintSumNumColumnArray(arr);
