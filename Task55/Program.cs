@@ -71,3 +71,4 @@ System.Console.WriteLine();
 
 int[,] arr = replacementRows(array);
 PrintArray(arr);
+q
