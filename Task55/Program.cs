@@ -14,7 +14,8 @@ int[,] CreateAndFillArray(int a, int b)
 {
     if(a != b){
     System.Console.WriteLine("Замена невозможна.");
-    System.Environment.Exit(1);
+    return null;
+    //System.Environment.Exit(1);
     }
 
     int[,] array = new int[a, b];
@@ -64,11 +65,12 @@ void PrintArray(int[,] array)
 
 
 
-int[,] array = CreateAndFillArray(6, 6);
+int[,] array = CreateAndFillArray(3, 6);
+if (array == null)
+return;
 PrintArray(array);
 
-System.Console.WriteLine();
+System.Console.WriteLine();q
 
 int[,] arr = replacementRows(array);
 PrintArray(arr);
-q
