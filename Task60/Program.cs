@@ -22,7 +22,6 @@ int[,,] CreateThirdMatrix()
 
 void PrintMatrix(int[,,] M)
 {
-
     for (int x = 0; x < M.GetLength(0); x++)
     {
         for (int y = 0; y < M.GetLength(1); y++)
@@ -31,11 +30,9 @@ void PrintMatrix(int[,,] M)
             {
                 System.Console.Write($"{M[x, y, z]}({x},{y},{z}) ");
             }
-            System.Console.WriteLine();
+         System.Console.WriteLine();   
         }        
-    }
-    
-
+    }    
 }
 
 int[,,] M = CreateThirdMatrix();
