@@ -13,21 +13,25 @@ int[,] CreateMatrix(int size)
     int x = 0, y = 0;
     int count = 1;
 
-    for (int i = y; i < y + size; i++)
-        m[x, i] = count++;
+    while (size > 0)
+    {
 
-    for (int i = 0; i < x + size; i++)
-        m[i, y + size - 1] = count++;
+        for (int i = y; i < y + size; i++)
+            m[x, i] = count++;
 
-    for (int i = y + size - 2; i >= y; i--)
-        m[x + size - 1, i] = count++;
+        for (int i = x + 1; i < x + size; i++)
+            m[i, y + size - 1] = count++;
 
-    for (int i = x + size - 2; i >= x + 1; i--)
-        m[i, y] = count++;
+        for (int i = y + size - 2; i >= y; i--)
+            m[x + size - 1, i] = count++;
 
-    x++;
-    y++;
-    size -= 2;
+        for (int i = x + size - 2; i >= x + 1; i--)
+            m[i, y] = count++;
+
+        x++;
+        y++;
+        size -= 2;
+    }
 
     return m;
 }
@@ -44,6 +48,8 @@ void PrintMatrix(int[,] M)
     }
 }
 
-int[,] M = CreateMatrix(4);
+System.Console.WriteLine("Введите размерность массива: ");
+int n = Convert.ToInt32(Console.ReadLine());
+int[,] M = CreateMatrix(n);
 
 PrintMatrix(M);
