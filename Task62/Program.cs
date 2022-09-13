@@ -10,26 +10,26 @@
 int[,] CreateMatrix(int size)
 {
     int[,] m = new int[size, size];
-    int x = 0, y = 0;
+    int y = 0, x = 0;
     int count = 1;
 
     while (size > 0)
     {
 
-        for (int i = y; i < y + size; i++)
-            m[x, i] = count++;
+        for (int i = x; i < x + size; i++)
+            m[y, i] = count++;
 
-        for (int i = x + 1; i < x + size; i++)
-            m[i, y + size - 1] = count++;
+        for (int i = y + 1; i < y + size; i++)
+            m[i, x + size - 1] = count++;
 
-        for (int i = y + size - 2; i >= y; i--)
-            m[x + size - 1, i] = count++;
+        for (int i = x + size - 2; i >= x; i--)
+            m[y + size - 1, i] = count++;
 
-        for (int i = x + size - 2; i >= x + 1; i--)
-            m[i, y] = count++;
+        for (int i = y + size - 2; i >= y + 1; i--)
+            m[i, x] = count++;
 
-        x++;
         y++;
+        x++;
         size -= 2;
     }
 
