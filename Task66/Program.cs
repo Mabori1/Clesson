@@ -21,7 +21,7 @@ int[] inputNums()
     return nums;
 }
 
-void printCountPositiveNums(int[] nums)
+void printAmountPositiveNums(int[] nums)
 {
     int sum = 0;
     for (var i = nums[0]; i <= nums[1]; i++)
@@ -33,4 +33,4 @@ void printCountPositiveNums(int[] nums)
 
 }
 
-printCountPositiveNums(inputNums());
+printAmountPositiveNums(inputNums());

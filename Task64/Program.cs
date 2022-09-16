@@ -20,7 +20,7 @@ int[] inputNums()
     return nums;
 }
 
-void printCountPositiveNums(int[] nums)
+void printPositiveNums(int[] nums)
 {
 
     System.Console.WriteLine($"натуральные числа в промежутке от {nums[0]} до {nums[1]}:\n");
@@ -32,4 +32,4 @@ void printCountPositiveNums(int[] nums)
 
 }
 
-printCountPositiveNums(inputNums());
+printPositiveNums(inputNums());
