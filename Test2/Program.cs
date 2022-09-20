@@ -1,26 +1,68 @@
-﻿// 2) Напишите программу, которая принимает на вход 
-// число N и выдаёт произведение чисел от 1 до N.
+﻿// 2) Напишите программу, которая находит третий элемент
+// массива по максимому
 
 
 
+using System;
 
+class GFG {  
 
-Console.WriteLine("Введите число: ");
+static void thirdLargest(int[] arr) 
+{
 
-int n = Convert.ToInt32(Console.ReadLine());
+    / * Должно быть не менее трех элементов * /
 
-Console.WriteLine(proizvedenieChisel(n));
+    if (arr.Length < 3)
+    {
+        Console.Write(" Invalid Input ");
+        return;
+    }  
 
+    // Инициализируем первый, второй и третий самый большой элемент
 
+    int first = arr[0], 
+        second = int.MinValue,
+        third = int.MinValue;  
 
+    // Обходим элементы массива, чтобы найти третий по величине
 
+    for (int i = 1; i < arr_size; i++) 
+    {
 
-int proizvedenieChisel(int n){
+        / * Если текущий элемент больше первого,
 
-int pr = 1;
+        затем обновите первый, второй и третий * /
 
-for (int i = 1; i <= n; i++)
-    pr = pr * i;
+        if (arr[i] > first) {
 
-return pr;
+            third = second;
+            second = first;
+            first = arr[i];
+        }          
+
+        / * Если arr [i] находится между первым и вторым * /
+
+        else if (arr[i] > second) {
+
+            third = second;
+            second = arr[i];
+        } 
+
+        / * Если arr [i] находится между вторым и третьим * /
+
+        else if (arr[i] > third) {
+
+            third = arr[i];
+        }
+    }
+    Console.Write("The third Largest element is "+ third);
+}
+    
+public static void Main() {
+
+        int[] arr = {12, 13, 1, 10, 34, 16};        
+
+        thirdLargest(arr);
+
+    }
 }

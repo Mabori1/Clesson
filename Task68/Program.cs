@@ -5,7 +5,7 @@
 
 int[] inputNums()
 {
-    System.Console.WriteLine("Введите два натуральных\n" +
+    System.Console.WriteLine("Введите два положительных\n" +
                              "числа через пробел: ");
 
     string temp = Console.ReadLine();
@@ -34,3 +34,5 @@ int[] nums = inputNums();
 int res = Akkerman(nums[0], nums[1]);
 System.Console.WriteLine($"Результат работы функции Аккермана\n" +
                           $"для чисел {nums[0]}, {nums[1]}: {res}\n");
+
+
